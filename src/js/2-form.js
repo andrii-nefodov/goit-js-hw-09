@@ -6,8 +6,7 @@ const formData = {
 const STORAGE_KEY = "feedback-form-state";
 const form = document.querySelector(".feedback-form");
 
-form.addEventListener("input", onFormInput);
-form.addEventListener("submit", handleSubmit)
+
 
 const savedData = localStorage.getItem(STORAGE_KEY);
 
@@ -18,6 +17,9 @@ if(savedData) {
     form.elements.email.value = formData.email;
     form.elements.message.value = formData.message;
 }
+
+form.addEventListener("input", onFormInput);
+form.addEventListener("submit", handleSubmit);
 
 function onFormInput(event) {
 const name = event.target.name;
