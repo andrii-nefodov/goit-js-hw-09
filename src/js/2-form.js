@@ -21,7 +21,7 @@ if(savedData) {
 
 function onFormInput(event) {
 const name = event.target.name;
-const value = event.target.value.trim();
+const value = event.target.value;
 
 if(name === "email") {
     formData.email = value;
@@ -39,6 +39,8 @@ function handleSubmit(event) {
         alert("Fill please all fields")
         return
     } 
+    console.log(formData);
+    
         localStorage.removeItem(STORAGE_KEY);
         form.reset();
         formData.email = "";
